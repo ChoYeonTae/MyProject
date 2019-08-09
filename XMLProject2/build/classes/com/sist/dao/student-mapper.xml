@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.dao.student-mapper"><!--  package(namespace) -->
+<!-- 
+	Content Model : (cache-ref | cache | resultMap* | parameterMap* | sql* | insert* | update* | delete* | select*)+
+ -->
+ <!-- 데이터 검색 -->
+ <!-- 
+ 			select count(*) from student => resultType="int"
+ 			select name from student     => resultType="String"
+ 			select kor,eng,math from student => resultType="StudentVO"
+ 															받아야할 데이터 타입을 쓴다.
+ 			resultType : 결과값 (리턴현)  void는 리턴값이 없으므로 쓰지 않는다.
+ 			parameterType : 매개변수  *vo에 없는 값은 map 을 쓴다
+  -->
+ <select id="studentAllData" resultType="StudentVO">
+ 	select * from student_view
+ </select>
+</mapper>
+	 
+	 
+	 
+	 
+	 
